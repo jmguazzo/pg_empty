@@ -1,7 +1,7 @@
 pg_empty
 ========
 
-Empty Visual Studio 2013 project/solution for developping extensions.
+Empty Visual Studio 2013 project/solution for developping PostgreSQL extensions.
 
 This project has all configurations ready for 32bits and 64bits build.
 
@@ -19,7 +19,9 @@ CREATE OR REPLACE FUNCTION pg_empty_example()
 
 Debug Configuration
 -------------------
-For this configuration,the PostgreSQL service will be restarted and the dll will be placed in the lib folder of postgresql installation
+It is configured to work on a computer with PostgreSQL 9.4 64bits and PostgreSQL 9.5 32bits installed with the default installation path.
+
+Each time you build with this configuration, the PostgreSQL service will be restarted and the dll will be placed in the lib folder of postgresql installation
 
 - 32bits : ```C:\Program Files (x86)\PostgreSQL\9.5\lib```
 - 64bits : ```C:\Program Files\PostgreSQL\9.4\lib```
@@ -39,3 +41,8 @@ For this configuration, the dll will be placed in a $(Configuration)_$(Platform)
 
 - 32bits : ```$(SolutionDir)\Release_Win32```
 - 64bits : ```$(SolutionDir)\Release_x64```
+
+You will have to manually install the DLL in the \lib folder of the PostgreSQL server.
+
+**If you copy the dll build with Debug Configuration in the \lib folder on a machine without visual studio installed, it will fail !
+*The DEBUG version looks for MSVCR120D.dll which is not installed with PostgreSQL.
