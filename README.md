@@ -15,7 +15,7 @@ CREATE OR REPLACE FUNCTION pg_empty_example()
   LANGUAGE c ;
 ```
 
-*If you want to include multiple projects in the same solution, you will need to change the value of the "ProjectGuid" in the vcxproj file.
+*If you want to include multiple projects in the same solution, you will need to change the value of the "ProjectGuid" in the vcxproj file.*
 
 Debug Configuration
 -------------------
@@ -32,7 +32,7 @@ There's a .cmd file that contains batch instructions to restart the service. (Or
 - 32bits : ```restart_service_x86.cmd```
 - 64bits : ```restart_service_x64.cmd```
 
-*You will have to run Visual Studio as administrator in order to restart the service.
+*You will have to run Visual Studio as administrator in order to restart the service.*
 
 
 Release Configuration
@@ -44,5 +44,6 @@ For this configuration, the dll will be placed in a $(Configuration)_$(Platform)
 
 You will have to manually install the DLL in the \lib folder of the PostgreSQL server.
 
-**If you copy the dll build with Debug Configuration in the \lib folder on a machine without visual studio installed, it will fail !
-*The DEBUG version looks for MSVCR120D.dll which is not installed with PostgreSQL.
+**If you copy the dll built with Debug Configuration in the \lib folder on a machine without visual studio installed, it will fail !**
+
+*The DEBUG version looks for MSVCR120D.dll which is not installed with PostgreSQL.*
